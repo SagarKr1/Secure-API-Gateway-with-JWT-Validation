@@ -1,80 +1,25 @@
-import React, { useState } from "react";
-import { Container, Typography, Box, TextField, Button, Grid, Paper } from "@mui/material";
+import React, { useState } from 'react';
+import { Container, Tabs, Tab, Box, Typography } from '@mui/material';
+import MyUserBlogs from './Blog'; // 👉 The user CRUD component
 
 export default function UserDashboard() {
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
-    const [message, setMessage] = useState("");
+    const [tab, setTab] = useState(0);
 
-    const handlePost = (e) => {
-        e.preventDefault();
-        // TODO: Implement POST blog logic here
-        console.log("Posting blog:", { title, content });
-        setMessage("Blog posted successfully!");
-        setTitle("");
-        setContent("");
-    };
-
-    const handleReport = () => {
-        // TODO: Implement report generation or view logic here
-        console.log("Generating report...");
-        alert("Report generated!");
+    const handleTabChange = (_, newValue) => {
+        setTab(newValue);
     };
 
     return (
-        <Container maxWidth="md" sx={{ mt: 4 }}>
-            <Typography variant="h4" gutterBottom>
-                User Dashboard
-            </Typography>
+        <Container>
+            <Typography variant="h4" gutterBottom>User Dashboard</Typography>
 
-            <Paper sx={{ p: 4, mb: 4 }}>
-                <Typography variant="h6" gutterBottom>
-                    Create New Blog Post
-                </Typography>
-                <Box component="form" onSubmit={handlePost}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Title"
-                                fullWidth
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-                                required
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Content"
-                                fullWidth
-                                multiline
-                                rows={6}
-                                value={content}
-                                onChange={(e) => setContent(e.target.value)}
-                                required
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Button type="submit" variant="contained" color="primary">
-                                Post Blog
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Box>
-                {message && (
-                    <Typography variant="body2" color="success.main" sx={{ mt: 2 }}>
-                        {message}
-                    </Typography>
-                )}
-            </Paper>
+            <Tabs value={tab} onChange={handleTabChange} sx={{ mb: 2 }}>
+                <Tab label="My Blogs" />
+            </Tabs>
 
-            <Paper sx={{ p: 4 }}>
-                <Typography variant="h6" gutterBottom>
-                    Generate Report
-                </Typography>
-                <Button variant="outlined" color="secondary" onClick={handleReport}>
-                    Generate Report
-                </Button>
-            </Paper>
+            <Box hidden={tab !== 0}>
+                <MyUserBlogs />
+            </Box>
         </Container>
     );
 }

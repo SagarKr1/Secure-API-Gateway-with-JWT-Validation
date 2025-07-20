@@ -39,6 +39,7 @@ module.exports.login = async (req, res) => {
             });
         }
         const data = {
+            "id":user[0].id,
             "name": user[0].name,
             "email": user[0].email,
             "role": user[0].role,

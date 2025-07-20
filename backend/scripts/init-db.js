@@ -27,13 +27,31 @@ async function initializeDatabase() {
                 email VARCHAR(255) NOT NULL UNIQUE,
                 phone VARCHAR(20) NOT NULL UNIQUE,
                 password VARCHAR(255) NOT NULL,
-                role ENUM('user','subadmin','admin') DEFAULT 'admin',
+                role ENUM('user','subadmin','admin') DEFAULT 'user',
                 is_verified BOOLEAN DEFAULT FALSE,
                 created_by VARCHAR(255),
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         `);
         console.log('Users table created or already exists');
+
+        // Create blog table if not exists
+        await pool.promise().query(`
+            CREATE TABLE IF NOT EXISTS blog (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                image TEXT NOT NULL,
+                description TEXT NOT NULL,
+                creator_id INT NOT NULL,
+                creator_name VARCHAR(255) NOT NULL,
+                creator_role VARCHAR(255) NOT NULL,
+                is_verified BOOLEAN DEFAULT FALSE,
+                remarks TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            )
+        `);
+        console.log('blog table created or already exists');
 
         process.exit(0);
     } catch (error) {

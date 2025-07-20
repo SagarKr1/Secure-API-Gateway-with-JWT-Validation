@@ -16,6 +16,8 @@ import Footer from './components/Footer/FooterPage';
 import ProtectedRoute from './auth/ProtectedRoutes';
 import VerifyEmailPage from './auth/EmailVerification';
 import ApiLogsPage from './components/Pages/AdminDashboard/ApiLog';
+import ManageBlogs from './components/Pages/AdminManageBlog/ManageBlog';
+
 
 export default function App() {
   const [user, setUser] = useState({
@@ -131,6 +133,15 @@ export default function App() {
             element={
               <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin')}>
                 <ApiLogsPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin-manage-blog"
+            element={
+              <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin')}>
+                <ManageBlogs />
               </ProtectedRoute>
             }
           />

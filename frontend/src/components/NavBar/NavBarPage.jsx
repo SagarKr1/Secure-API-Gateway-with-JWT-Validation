@@ -46,6 +46,7 @@ export default function Navbar({ user }) {
         { label: "Blog", path: "/blog" },
     ];
 
+    // ✅ Updated role pages with Manage Blogs and correct route
     const getRolePages = () => {
         if (!user || !user.isAuthenticated) return [];
         switch (user.role) {
@@ -54,6 +55,7 @@ export default function Navbar({ user }) {
                 return [
                     { label: "Admin Dashboard", path: "/admin-dashboard" },
                     { label: "Manage Users", path: "/manage-users" },
+                    { label: "Manage Blogs", path: "/admin-manage-blog" }, // ✅ Correct route
                 ];
             case "user":
                 return [{ label: "User Dashboard", path: "/dashboard" }];
@@ -103,27 +105,25 @@ export default function Navbar({ user }) {
                                 open={Boolean(profileMenuAnchor)}
                                 onClose={handleProfileClose}
                             >
-                                {[
-                                    <MenuItem
-                                        key="profile"
-                                        component={Link}
-                                        to="/profile"
-                                        onClick={handleProfileClose}
-                                    >
-                                        Edit Profile
-                                    </MenuItem>,
-                                    <MenuItem
-                                        key="report"
-                                        component={Link}
-                                        to="/report"
-                                        onClick={handleProfileClose}
-                                    >
-                                        Report
-                                    </MenuItem>,
-                                    <MenuItem key="logout" onClick={handleLogout}>
-                                        Logout
-                                    </MenuItem>,
-                                ]}
+                                <MenuItem
+                                    key="profile"
+                                    component={Link}
+                                    to="/profile"
+                                    onClick={handleProfileClose}
+                                >
+                                    Edit Profile
+                                </MenuItem>
+                                <MenuItem
+                                    key="report"
+                                    component={Link}
+                                    to="/report"
+                                    onClick={handleProfileClose}
+                                >
+                                    Report
+                                </MenuItem>
+                                <MenuItem key="logout" onClick={handleLogout}>
+                                    Logout
+                                </MenuItem>
                             </Menu>
                         </>
                     ) : (
@@ -165,8 +165,8 @@ export default function Navbar({ user }) {
                             </MenuItem>
                         ))}
 
-                        {user && user.isAuthenticated
-                            ? [
+                        {user && user.isAuthenticated ? (
+                            [
                                 <MenuItem
                                     key="profile-mobile"
                                     component={Link}
@@ -193,16 +193,16 @@ export default function Navbar({ user }) {
                                     Logout
                                 </MenuItem>,
                             ]
-                            : [
-                                <MenuItem
-                                    key="login-mobile"
-                                    component={Link}
-                                    to="/login"
-                                    onClick={handleClose}
-                                >
-                                    Login
-                                </MenuItem>,
-                            ]}
+                        ) : (
+                            <MenuItem
+                                key="login-mobile"
+                                component={Link}
+                                to="/login"
+                                onClick={handleClose}
+                            >
+                                Login
+                            </MenuItem>
+                        )}
                     </Menu>
                 </Box>
             </Toolbar>
