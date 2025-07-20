@@ -1,0 +1,136 @@
+2025-07-19T05:32:41.174Z - GET /api/stats/ips - IP: ::1
+2025-07-19T05:34:25.671Z - GET /api/log/all - IP: ::1
+2025-07-19T05:35:57.702Z - GET /api/log/all - IP: ::1
+2025-07-19T05:36:08.638Z - GET /api/log/all - IP: ::1
+2025-07-19T05:37:07.721Z - GET /api/log/recent - IP: ::1
+2025-07-19T05:37:12.584Z - GET /api/log/recent - IP: ::1
+2025-07-19T05:39:57.933Z - GET /api/log/view/api-2025-07-19.log - IP: ::1
+2025-07-19T05:42:34.399Z - GET /api/log/recent - IP: ::1
+2025-07-19T05:59:53.177Z - GET /api/log/view/api-2025-07-19.log - IP: ::1
+2025-07-19T06:03:31.832Z - POST /api/user/login - IP: 127.0.0.1
+2025-07-19T06:03:35.372Z - GET /api/admin/get_all_users - IP: 127.0.0.1
+2025-07-19T06:10:57.828Z - GET /api/log/alerts/recent - IP: ::1
+2025-07-19T06:11:23.245Z - GET /api/log/alerts/all - IP: ::1
+2025-07-19T06:12:08.153Z - GET /api/log/alerts/view/alert - IP: ::1
+2025-07-19T06:16:53.006Z - GET /api/admin/get_all_users - IP: 127.0.0.1
+2025-07-19T06:17:39.313Z - GET /api/log/recent - IP: ::1
+2025-07-19T06:17:39.332Z - GET /api/log/alerts/recent - IP: ::1
+2025-07-19T06:17:46.794Z - GET /api/log/recent - IP: ::1
+2025-07-19T06:17:46.796Z - GET /api/log/alerts/recent - IP: ::1
+2025-07-19T06:20:34.978Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:20:34.974Z - GET /api/log/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:20:48.726Z - GET /api/log/alerts/view/alert - IP: ::1 - STATUS: 400
+2025-07-19T06:20:52.703Z - GET /api/log/alerts/all - IP: ::1 - STATUS: 200
+2025-07-19T06:20:56.761Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T06:21:02.942Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T06:21:02.945Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:21:17.179Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T06:21:17.181Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:21:27.305Z - GET /api/log/view/api-2025-07-19.log/salkcja - IP: ::1 - STATUS: 404
+2025-07-19T06:21:33.650Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T06:21:38.332Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:21:38.336Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T06:32:26.363Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:32:26.361Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T06:35:55.306Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:35:55.304Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T06:39:53.304Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T06:39:53.302Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:14:16.105Z - POST /api/user/login - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T14:14:19.183Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:14:19.185Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:19:14.807Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:19:14.809Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:19:20.813Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:19:20.808Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:19:54.037Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:24:18.047Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:24:18.043Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:24:51.226Z - GET /api/log/list - IP: ::1 - STATUS: 404
+2025-07-19T14:24:55.264Z - GET /api/log/list - IP: ::1 - STATUS: 404
+2025-07-19T14:25:06.856Z - GET /api/log/list - IP: ::1 - STATUS: 404
+2025-07-19T14:25:37.634Z - GET /api/log/all - IP: ::1 - STATUS: 200
+2025-07-19T14:25:40.320Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T14:25:42.455Z - GET /api/log/view/api-2025-07-18.log - IP: ::1 - STATUS: 200
+2025-07-19T14:26:03.250Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T14:26:04.576Z - GET /api/log/view/api-2025-07-18.log - IP: ::1 - STATUS: 304
+2025-07-19T14:28:16.461Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T14:28:29.797Z - GET /api/log/view/api-2025-07-18.log - IP: ::1 - STATUS: 304
+2025-07-19T14:28:52.866Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:28:52.863Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:28:54.201Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:28:54.979Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:28:54.981Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:28:56.151Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:30:41.102Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:30:42.247Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T14:32:11.860Z - GET /api/log/view/api-2025-07-18.log - IP: ::1 - STATUS: 304
+2025-07-19T14:35:42.567Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:35:43.392Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:35:49.062Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:35:49.061Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:35:51.077Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:36:18.797Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:36:52.278Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:38:11.753Z - POST /api/admin/create_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T14:39:01.668Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:39:24.761Z - GET /api/log/alerts/recent - IP: ::1 - STATUS: 304
+2025-07-19T14:39:24.754Z - GET /api/log/recent - IP: ::1 - STATUS: 200
+2025-07-19T14:39:28.416Z - GET /api/log/all - IP: ::1 - STATUS: 304
+2025-07-19T14:39:30.984Z - GET /api/log/view/api-2025-07-19.log - IP: ::1 - STATUS: 200
+2025-07-19T14:39:41.906Z - GET /api/log/view/api-2025-07-18.log - IP: ::1 - STATUS: 304
+2025-07-19T14:39:50.914Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:48:20.324Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T14:49:09.221Z - POST /api/admin/create_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T14:49:32.548Z - GET /api/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJzYWcxOTdAZ21haWwuY29tIiwicGhvbmUiOiIwNjIwNTk3Mzg2NSIsImlhdCI6MTc1MjkzNjU0OSwiZXhwIjoxNzUyOTM3MTQ5fQ.hn-ynH_fJa5r8G5syOIcS6g1XcCplyDlrpKgLHe2dhM - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T14:49:38.044Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T14:49:48.482Z - DELETE /api/admin/delete_user/4 - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T14:50:13.843Z - POST /api/admin/update_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T15:03:36.563Z - POST /api/admin/create_user - IP: ::1 - STATUS: 200
+2025-07-19T15:03:54.018Z - GET /api/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzYWcxOTczNDhAZ21haWwuY29tIiwicGhvbmUiOiIrMTIzNDU4OTAiLCJpYXQiOjE3NTI5Mzc0MTYsImV4cCI6MTc1MjkzODAxNn0.qaxqt_sSgCFzt_WYKENAoXOGlUhZKweQ80voCtNO38s - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:04:19.744Z - POST /api/admin/create_user - IP: ::1 - STATUS: 200
+2025-07-19T15:04:38.414Z - GET /api/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJzYWcxOTczNEBnbWFpbC5jb20iLCJwaG9uZSI6IisxMjM0NTg5MDMzIiwiaWF0IjoxNzUyOTM3NDYwLCJleHAiOjE3NTI5MzgwNjB9.o7g30JAFATCrSZYMRYqdl2Fvd1BEaRB_lmJHoT_x1hY - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:06:56.406Z - POST /api/user/login - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:06:58.240Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:07:12.673Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:09:52.919Z - POST /api/admin/create_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:10:21.581Z - GET /api/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJzYWcxOTdAZ21haWwuY29tIiwicGhvbmUiOiIwNjIwNTk3Mzg2NSIsImlhdCI6MTc1MjkzNzc5MywiZXhwIjoxNzUyOTM4MzkzfQ.8pCQQcLoDxxdsSMxWkf_6Sb_jL27Se3G29Of7in840c - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:10:26.436Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:12:14.366Z - POST /api/admin/edit_user - IP: ::1 - STATUS: 404
+2025-07-19T15:13:21.111Z - PUT /api/admin/edit_user - IP: ::1 - STATUS: 200
+2025-07-19T15:13:44.455Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:14:06.803Z - PUT /api/admin/edit_user - IP: ::1 - STATUS: 200
+2025-07-19T15:14:10.974Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:18:44.879Z - PUT /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:18:52.952Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:19:46.106Z - DELETE /api/admin/delete_user - IP: ::1 - STATUS: 400
+2025-07-19T15:20:14.036Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:20:33.405Z - GET /api/admin/get_all_users - IP: ::1 - STATUS: 200
+2025-07-19T15:20:45.161Z - DELETE /api/admin/delete_user - IP: ::1 - STATUS: 400
+2025-07-19T15:21:36.046Z - GET /api/admin/get_all_users - IP: ::1 - STATUS: 200
+2025-07-19T15:22:19.637Z - DELETE /api/admin/delete_user - IP: ::1 - STATUS: 200
+2025-07-19T15:22:24.849Z - GET /api/admin/get_all_users - IP: ::1 - STATUS: 200
+2025-07-19T15:22:29.449Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:31:40.253Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:31:42.236Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:31:45.128Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:39:09.374Z - POST /api/admin/update_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T15:39:36.671Z - POST /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T15:39:40.421Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:40:01.152Z - POST /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T15:40:09.452Z - POST /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 404
+2025-07-19T15:40:37.056Z - PUT /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:40:38.742Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:40:45.182Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:40:54.742Z - PUT /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:40:56.483Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:41:27.374Z - POST /api/admin/create_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:41:32.596Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:41:57.459Z - GET /api/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJzYWcxOTczNEBnbWFpbC5jb20iLCJwaG9uZSI6IjA2MjA1OTczODYwIiwiaWF0IjoxNzUyOTM5Njg3LCJleHAiOjE3NTI5NDAyODd9.bcRq7KWbZLwKdUK38yRR0B02cOSBNLGod7QovX-m1mA - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:42:05.285Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:43:56.234Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:43:59.721Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 304
+2025-07-19T15:44:11.633Z - DELETE /api/admin/delete_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:44:13.148Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:44:23.664Z - PUT /api/admin/edit_user - IP: 127.0.0.1 - STATUS: 200
+2025-07-19T15:44:25.223Z - GET /api/admin/get_all_users - IP: 127.0.0.1 - STATUS: 200
