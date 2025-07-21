@@ -6,7 +6,7 @@ module.exports.getApprovedBlogs = async (req, res) => {
             `SELECT * 
                 FROM blog 
                 WHERE is_verified = 1
-                ORDER BY id DESC`
+                ORDER BY timestamp DESC`
         );
 
         if (blogs.length === 0) {
@@ -36,7 +36,7 @@ module.exports.getUnapprovedBlogs = async (req, res) => {
             `SELECT *
                 FROM blog 
                 WHERE is_verified = 0
-                ORDER BY id DESC`
+                ORDER BY timestamp DESC`
         );
 
         if (blogs.length === 0) {

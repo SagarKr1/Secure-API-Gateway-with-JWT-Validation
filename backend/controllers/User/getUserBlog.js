@@ -15,7 +15,7 @@ module.exports.getBlogsByCreator = async (req, res) => {
             `SELECT * 
                 FROM blog 
                 WHERE creator_id = ? AND creator_role = 'user'
-                ORDER BY id DESC`,
+                ORDER BY timestamp DESC`,
             [creator_id]
         );
 

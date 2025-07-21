@@ -54,7 +54,7 @@ export default function MyUserBlogs() {
         if (!creator_id) return;
 
         try {
-            const res = await axios.get(`/api/admin/user_blog/${creator_id}`, {
+            const res = await axios.get(`/api/user/user_blog/${creator_id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (Array.isArray(res.data.body)) {
@@ -74,7 +74,7 @@ export default function MyUserBlogs() {
 
     const handleCreate = async () => {
         try {
-            await axios.post('/api/admin/create_blog', {
+            await axios.post('/api/user/create_blog', {
                 creator_id,
                 title: formData.title,
                 image: formData.image,
@@ -82,7 +82,7 @@ export default function MyUserBlogs() {
             }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            toast.success('Blog created successfully!');
+            toast.success('Blog created!');
             fetchBlogs();
             handleClose();
         } catch (err) {
@@ -113,7 +113,7 @@ export default function MyUserBlogs() {
             }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            toast.success('Blog updated successfully!');
+            toast.success('Blog updated!');
             fetchBlogs();
             handleClose();
         } catch (err) {
@@ -166,7 +166,7 @@ export default function MyUserBlogs() {
                                     </TableCell>
                                     <TableCell>{blog.title}</TableCell>
                                     <TableCell>{blog.description}</TableCell>
-                                    <TableCell>{blog.approved ? "Yes" : "No"}</TableCell>
+                                    <TableCell>{blog.is_verified ? "Yes" : "No"}</TableCell>
                                     <TableCell>
                                         <Button variant="outlined" size="small" onClick={() => handleEdit(blog)}>
                                             Edit
