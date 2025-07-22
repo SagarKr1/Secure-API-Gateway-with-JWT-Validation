@@ -2,8 +2,8 @@ const db = require('../../config/database');
 
 module.exports.editBlog = async (req, res) => {
     try {
-        const { blog_id, creator_id, title, image, description } = req.body;
-
+        const { blog_id, title, image, description } = req.body;
+        const creator_id = req.user.id;
         if (!blog_id || !creator_id || !title || !image || !description) {
             return res.status(400).json({
                 status: false,

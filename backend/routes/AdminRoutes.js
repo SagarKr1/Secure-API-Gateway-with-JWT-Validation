@@ -7,8 +7,12 @@ const adminBlog = require('../controllers/Admin/createBlog');
 const getBlog = require('../controllers/Admin/getUserBlog');
 const approveBlog = require('../controllers/Admin/approveBlog');
 const adminEditBlog = require('../controllers/Admin/edit_blog');
+const deleteBlog = require('../controllers/Admin/deleteBlog');
+const profile = require('../controllers/Admin/editProfile');
 
 const router = express.Router();
+
+// auth
 const authMiddleware = require('../auth/authToken/authToken');
 
 router.get('/',async (req, res) => {
@@ -28,6 +32,9 @@ router.post('/create_blog',authMiddleware(['admin','subadmin']),adminBlog.create
 router.put('/edit_blog',authMiddleware(['admin','subadmin','user']),adminEditBlog.editBlog);
 router.put('/approve_blog',authMiddleware(['admin','subadmin']),approveBlog.updateBlogApproval);
 router.get('/user_blog/:creator_id',authMiddleware(['admin','subadmin']),getBlog.getBlogsByCreator);
+router.delete('/delete_blog/:id',authMiddleware(['admin','subadmin','user']),deleteBlog.deleteBlog);
+router.put('/profile',authMiddleware(['admin','subadmin','user']),profile.editProfile);
+router.put('/change_password',authMiddleware(['admin','subadmin','user']),profile.changePassword);
 
 
 module.exports = router;

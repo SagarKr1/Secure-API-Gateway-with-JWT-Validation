@@ -95,7 +95,7 @@ export default function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <Link href="#" underline="hover" variant="body2" align="right">
+                        <Link href="/forgot-password" underline="hover" variant="body2" align="right">
                             Forgot password?
                         </Link>
                         <Button type="submit" variant="contained" size="large" fullWidth>

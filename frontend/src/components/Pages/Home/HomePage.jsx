@@ -206,13 +206,6 @@ export default function HomePage() {
                     </Button>
                 </Box>
             </Paper>
-
-            {/* Footer
-            <Box sx={{ textAlign: "center", pt: 4, borderTop: "1px solid #ddd" }}>
-                <Typography variant="body2" color="text.secondary">
-                    © {new Date().getFullYear()} SecureBlog — All rights reserved.
-                </Typography>
-            </Box> */}
         </Container>
     );
 }

@@ -2,8 +2,8 @@ const db = require('../../config/database');
 
 module.exports.createBlogUser = async (req, res) => {
     try {
-        const { creator_id, title, image, description } = req.body;
-
+        const { title, image, description } = req.body;
+        const creator_id = req.user.id;
         if (!creator_id || !title || !image || !description) {
             return res.status(400).json({
                 status: false,

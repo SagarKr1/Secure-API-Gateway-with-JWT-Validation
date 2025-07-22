@@ -46,7 +46,6 @@ export default function Navbar({ user }) {
         { label: "Blog", path: "/blog" },
     ];
 
-    // ✅ Updated role pages with Manage Blogs and correct route
     const getRolePages = () => {
         if (!user || !user.isAuthenticated) return [];
         switch (user.role) {
@@ -55,7 +54,7 @@ export default function Navbar({ user }) {
                 return [
                     { label: "Admin Dashboard", path: "/admin-dashboard" },
                     { label: "Manage Users", path: "/manage-users" },
-                    { label: "Manage Blogs", path: "/admin-manage-blog" }, // ✅ Correct route
+                    { label: "Manage Blogs", path: "/admin-manage-blog" },
                 ];
             case "user":
                 return [{ label: "User Dashboard", path: "/dashboard" }];
@@ -113,14 +112,6 @@ export default function Navbar({ user }) {
                                 >
                                     Edit Profile
                                 </MenuItem>
-                                <MenuItem
-                                    key="report"
-                                    component={Link}
-                                    to="/report"
-                                    onClick={handleProfileClose}
-                                >
-                                    Report
-                                </MenuItem>
                                 <MenuItem key="logout" onClick={handleLogout}>
                                     Logout
                                 </MenuItem>
@@ -174,14 +165,6 @@ export default function Navbar({ user }) {
                                     onClick={handleClose}
                                 >
                                     Edit Profile
-                                </MenuItem>,
-                                <MenuItem
-                                    key="report-mobile"
-                                    component={Link}
-                                    to="/report"
-                                    onClick={handleClose}
-                                >
-                                    Report
                                 </MenuItem>,
                                 <MenuItem
                                     key="logout-mobile"

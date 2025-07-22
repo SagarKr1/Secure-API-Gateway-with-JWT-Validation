@@ -1,0 +1,464 @@
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+C:\USERS\SAGAR KUMAR\APPDATA\ROAMING\NPM\SERVE.CMD:1
+@ECHO off
+^
+
+SyntaxError: Invalid or unexpected token
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1
+node:internal/modules/cjs/loader:1146
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\sagar\CyberSecurityProjects\Secure-API-Gateway-with-JWT-Validation\frontend\build'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
+    at Module._load (node:internal/modules/cjs/loader:984:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.12.1

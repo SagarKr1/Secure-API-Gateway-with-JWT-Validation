@@ -63,7 +63,7 @@ module.exports.getLatestBlog = async (req, res) => {
     try {
         // Fetch latest 3 approved blogs sorted by created_at DESC
         const [blogs] = await db.query(
-            'SELECT * FROM blog WHERE is_verified = ? ORDER BY timestamp DESC LIMIT 3',
+            'SELECT * FROM blog WHERE is_verified = ? ORDER BY timestamp DESC LIMIT 5',
             [true]
         );
 

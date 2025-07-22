@@ -17,6 +17,8 @@ import ProtectedRoute from './auth/ProtectedRoutes';
 import VerifyEmailPage from './auth/EmailVerification';
 import ApiLogsPage from './components/Pages/AdminDashboard/ApiLog';
 import ManageBlogs from './components/Pages/AdminManageBlog/ManageBlog';
+import EditProfile from './components/NavBar/editProfile';
+import ForgotPassword from './components/Pages/Login/forgotPassword';
 
 
 export default function App() {
@@ -89,6 +91,8 @@ export default function App() {
             }
           />
 
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
           <Route path="/blog" element={<Blog />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
 
@@ -145,6 +149,16 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin')}>
+                <EditProfile />
+              </ProtectedRoute>
+            }
+          />
+
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>

@@ -4,10 +4,9 @@ const alerts = require('../controllers/WatchLogs/alerts');
 
 const router = express.Router();
 
-// ✅ Optional: Add your auth middleware if needed
-// const authMiddleware = require('../auth/authToken/authToken');
+// auth
+const authMiddleware = require('../auth/authToken/authToken');
 
-// ✅ Simple test
 router.get('/', (req, res) => {
     res.json({
         status: true,
@@ -15,20 +14,14 @@ router.get('/', (req, res) => {
     });
 });
 
-// ----------------------
-// 📁 LOGS ROUTES
-// ----------------------
+// request/response logs
+router.get('/all',authMiddleware(['admin','subadmin']), logs.allLogs);
+router.get('/recent',authMiddleware(['admin','subadmin']), logs.recentLogs);
+router.get('/view/:filename',authMiddleware(['admin','subadmin']), logs.viewLog);
 
-router.get('/all', logs.allLogs);
-router.get('/recent', logs.recentLogs);
-router.get('/view/:filename', logs.viewLog);
-
-// ----------------------
-// 📁 ALERTS ROUTES
-// ----------------------
-
-router.get('/alerts/all', alerts.allAlerts);
-router.get('/alerts/recent', alerts.recentAlerts);
-router.get('/alerts/view/:filename', alerts.viewAlert);
+// alert logs
+router.get('/alerts/all',authMiddleware(['admin','subadmin']), alerts.allAlerts);
+router.get('/alerts/recent',authMiddleware(['admin','subadmin']), alerts.recentAlerts);
+router.get('/alerts/view/:filename',authMiddleware(['admin','subadmin']), alerts.viewAlert);
 
 module.exports = router;

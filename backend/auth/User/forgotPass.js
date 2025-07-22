@@ -1,163 +1,71 @@
 const db = require('../../config/database');
-const jwt = require('jsonwebtoken');
-const transporter = require('../mail/mailAuth');
-const bcrypt = require('bcryptjs')
+const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
+const nodemailer = require('../mail/mailAuth');
 require('dotenv').config();
 
-const generateOtp = async () => {
-    const otp = await Math.floor(100000 + Math.random() * 900000); // Generate 6-digit OTP
-    return otp;
-};
-
-module.exports.forgotOtp = async (req, res) => {
+module.exports.forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
-        console.log(req.body);
+
         if (!email) {
-            console.log("email not found");
-            return res.status(400).json({
-                status: false,
-                body: "Data should not be empty"
-            });
-        }
-        const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
-        console.log(rows);
-        if(!rows[0]){
-            console.log("user not found");
-            return res.status(404).json({
-                status:false,
-                body:"User not found"
-            });
+            return res.status(400).json({status:false, body: 'Email is required.' });
         }
 
-        if(!rows[0].is_verified){
-            console.log("User not verfied");
-            return res.status(404).json({
-                status:false,
-                body:"User not found"
-            });
+        // 1️⃣ Check if user exists
+        const [rows] = await db.execute('SELECT * FROM users WHERE email = ?', [email]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({status:false, body: 'No account found with that email.' });
         }
 
-        const otp = await generateOtp();
+        const user = rows[0];
+
+        // 2️⃣ Generate a new random password
+        const newPassword = crypto.randomBytes(6).toString('hex'); // e.g. "a1b2c3d4e5f6"
+
+        // 3️⃣ Hash the new password
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // 4️⃣ Store the new hashed password in DB
+        await db.execute(
+            'UPDATE users SET password = ? WHERE id = ?',
+            [hashedPassword, user.id]
+        );
 
         const mailOptions = {
-            from: process.env.email,
-            to: email,
-            subject: 'Your Verification OTP',
+            from: `"Security Blog" <${process.env.EMAIL_USER}>`,
+            to: user.email,
+            subject: 'Your New Password - Action Required',
             html: `
-                <div style="font-family: 'Arial', sans-serif; color: #333; padding: 20px; background-color: #f4f4f4;">
+        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          <h2>Hello ${user.name || 'User'},</h2>
 
-                <!-- Header Section -->
-                <div style="background-color: #0044cc; color: white; padding: 20px; text-align: center;">
-                    <h1 style="margin: 0; font-size: 30px; font-weight: bold;">SBTE</h1>
-                    <p style="font-size: 18px; margin-top: 5px;">Government of Bihar</p>
-                </div>
+          <p>We received a request to reset your password for your account registered with this email: <strong>${user.email}</strong>.</p>
 
-                <!-- Main Content -->
-                <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-top: 20px;">
+          <p>Your new temporary password is:</p>
+          <div style="background: #f2f2f2; padding: 10px; display: inline-block; font-size: 16px;">
+            <strong>${newPassword}</strong>
+          </div>
 
-                    <p style="font-size: 18px;">Dear User,</p>
-                    
-                    <p style="font-size: 16px; line-height: 1.6;">We received a request to reset your SBTE account password. Please use the following One-Time Password (OTP) to proceed. This OTP is valid for <strong>5 minutes</strong>.</p>
+          <p><strong>Please log in using this new password as soon as possible.</strong> For your security, we strongly recommend that you change this password immediately after logging in.</p>
 
-                    <div style="text-align: center; margin: 20px 0;">
-                        <h2 style="font-size: 36px; color: #0044cc; font-weight: bold; letter-spacing: 2px;">${otp}</h2>
-                    </div>
+          <p>If you did not request this reset, please contact our support team immediately.</p>
 
-                    <p style="font-size: 16px; line-height: 1.6;">If you did not request a password reset, you can safely ignore this email.</p>
-                </div>
+          <p>Best regards,<br>Your App Support Team</p>
 
-                <!-- Footer Section -->
-                <div style="margin-top: 30px; text-align: center; color: #888; font-size: 14px;">
-                    <p>&copy; 2025 SBTE - Government of Bihar. All rights reserved.</p>
-                </div>
-
-            </div>
-
-            `
+          <hr style="margin-top: 20px;"/>
+          <small>If you have any questions or need help, please reach out to <a href="mailto:support@yourapp.com">support@yourapp.com</a>.</small>
+        </div>
+      `
         };
 
-        await transporter.sendMail(mailOptions);
-        console.log('OTP sent to email:', email);
-        const otpToken = jwt.sign(
-            { email, otp },
-            process.env.secret,
-            { expiresIn: '10m' }
-        );
-        
-        await db.query(
-            `UPDATE users
-                SET otp = ?
-                WHERE email = ?`,
-            [otpToken, email]
-        );
+        await nodemailer.sendMail(mailOptions);
 
-        return res.json({
-            status:true,
-            body:"Otp sent to "+email
-        })
-
+        return res.json({status:true, body: 'A new password has been generated and sent to your email address.' });
 
     } catch (e) {
-        console.log("Error : ", e);
-        return res.status(500).json({
-            status: false,
-            body: "Error " + e.message
-        })
+        console.error(e);
+        return res.status(500).json({status:false, body: 'Server error.' });
     }
-
-}
-
-
-module.exports.forgotPassward = async (req, res) => {
-    try {
-        const {email,password} = req.body;
-        console.log(req.body);
-        if(!email || !password){
-            console.log("Data should not be empty");
-            return res.status(400).json({
-                status:false,
-                body:"data should not be empty"
-            })
-        }
-
-        const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
-        console.log(rows);
-        if(!rows[0]){
-            console.log("user not found");
-            return res.status(404).json({
-                status:false,
-                body:"User not found"
-            });
-        }
-
-        if(!rows[0].is_verified || !rows[0].otp){
-            console.log("User not verfied");
-            return res.status(404).json({
-                status:false,
-                body:"User not verified"
-            });
-        }
-
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        await db.query(
-            `UPDATE users
-                SET password = ?
-                WHERE email = ?`,
-            [hashedPassword, email]
-        );
-
-        return res.json({
-            status:true,
-            body:"Password Change"
-        })
-    } catch (e) {
-        console.log("Error : ", e);
-        return res.status(500).json({
-            status: false,
-            body: "Error " + e.message
-        })
-    }
-
-}
+};

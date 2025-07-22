@@ -8,7 +8,8 @@ require('dotenv').config();
 
 module.exports.CreateUser = async (req, res) => {
     try {
-        const { name, email, phone, password, role, created_by } = req.body;
+        const { name, email, phone, password, role } = req.body;
+        const created_by = req.user.role;
         if (!name || !email || !phone || !password || !role || !created_by) {
             return res.status(404).json({
                 status: false,
