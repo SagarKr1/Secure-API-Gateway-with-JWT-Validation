@@ -23,6 +23,7 @@ router.get('/approved_blog',getAllApprovedBlog.getApprovedBlogs);
 router.get('/unapproved_blog',getAllApprovedBlog.getUnapprovedBlogs);
 // router.put('/edit_blog',editBlog.editBlogByUser);
 
+router.get('/latest_blog',getAllApprovedBlog.getLatestBlog);
 router.post('/login',login.login);
 router.get('/verify/:token',verifyEmail.verifyEmail);
 module.exports = router; 

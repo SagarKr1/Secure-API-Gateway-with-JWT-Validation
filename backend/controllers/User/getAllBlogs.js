@@ -58,3 +58,24 @@ module.exports.getUnapprovedBlogs = async (req, res) => {
         });
     }
 };
+
+module.exports.getLatestBlog = async (req, res) => {
+    try {
+        // Fetch latest 3 approved blogs sorted by created_at DESC
+        const [blogs] = await db.query(
+            'SELECT * FROM blog WHERE is_verified = ? ORDER BY timestamp DESC LIMIT 3',
+            [true]
+        );
+
+        res.status(200).json({
+            status: true,
+            body: blogs
+        });
+    } catch (e) {
+        console.error(e);
+        res.status(500).json({
+            status: false,
+            body: 'Error fetching latest blogs'
+        });
+    }
+};

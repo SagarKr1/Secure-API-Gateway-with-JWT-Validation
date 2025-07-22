@@ -12,6 +12,10 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
 
+// ✅ NEW: Import react-toastify
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function AdminDashboard() {
     const [stats] = useState({
         totalRequests: 12345,
@@ -51,8 +55,18 @@ export default function AdminDashboard() {
         const fetchAlerts = async () => {
             try {
                 const res = await axios.get("http://localhost:8080/api/log/alerts/recent");
+                console.log("Alerts API:", res.data); // ✅ NEW: Debug
+
                 if (res.data?.body) {
                     setAlerts(res.data.body);
+
+                    // ✅ NEW: Show toast for each alert
+                    res.data.body.forEach((alert) => {
+                        toast.info(`🚨 Alert: ${alert}`, {
+                            position: "top-right",
+                            autoClose: 5000,
+                        });
+                    });
                 }
             } catch (err) {
                 console.error("❌ Error fetching alerts:", err);
@@ -68,6 +82,9 @@ export default function AdminDashboard() {
             maxWidth="lg"
             sx={{ mt: 4, display: "flex", flexDirection: "column", alignItems: "center" }}
         >
+            {/* ✅ NEW: Toast Container */}
+            <ToastContainer />
+
             <Typography variant="h4" gutterBottom textAlign="center">
                 Admin Dashboard
             </Typography>
