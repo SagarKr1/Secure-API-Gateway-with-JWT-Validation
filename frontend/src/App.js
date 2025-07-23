@@ -91,7 +91,11 @@ export default function App() {
             }
           />
 
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/forgot-password" element={
+          <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin' || user.role === 'user')}>
+                <EditProfile />
+              </ProtectedRoute>
+          } />
 
           <Route path="/blog" element={<Blog />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
