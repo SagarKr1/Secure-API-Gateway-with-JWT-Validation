@@ -91,11 +91,7 @@ export default function App() {
             }
           />
 
-          <Route path="/forgot-password" element={
-          <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin' || user.role === 'user')}>
-                <EditProfile />
-              </ProtectedRoute>
-          } />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route path="/blog" element={<Blog />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
@@ -157,7 +153,7 @@ export default function App() {
           <Route
             path="/profile"
             element={
-              <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin')}>
+              <ProtectedRoute isAllowed={user.isAuthenticated && (user.role === 'admin' || user.role === 'subadmin' || user.role === 'user')}>
                 <EditProfile />
               </ProtectedRoute>
             }
