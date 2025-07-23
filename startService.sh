@@ -11,7 +11,7 @@ sudo service redis-server start
 
 echo "👉 Starting PM2 processes..."
 # Replace with your actual PM2 process name or ecosystem config
-pm2 start backend/app.js --name api-gateway
+pm2 start backend/index.js --name api-gateway
 
 echo "👉 Reloading Nginx..."
 sudo nginx -s reload
