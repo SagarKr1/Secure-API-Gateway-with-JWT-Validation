@@ -23,6 +23,9 @@ export default function ApiLogsPage() {
     const [fileLogs, setFileLogs] = useState({});
     const [loading, setLoading] = useState({});
 
+    const token = sessionStorage.getItem('token');
+
+
     const getStatusColor = (status) => {
         if (status >= 200 && status < 300) return "success";
         if (status >= 400 && status < 500) return "warning";
@@ -33,7 +36,9 @@ export default function ApiLogsPage() {
     useEffect(() => {
         const fetchFiles = async () => {
             try {
-                const res = await axios.get("http://localhost:8080/api/log/all");
+                const res = await axios.get("http://localhost:8080/api/log/all",{
+                    headers: { Authorization: `Bearer ${token}` }
+                });
                 if (Array.isArray(res.data?.body)) {
                     setLogFiles(res.data.body);
                 } else {
@@ -52,7 +57,9 @@ export default function ApiLogsPage() {
         if (isExpanded && !fileLogs[file]) {
             setLoading((prev) => ({ ...prev, [file]: true }));
             try {
-                const res = await axios.get(`http://localhost:8080/api/log/view/${file}`);
+                const res = await axios.get(`http://localhost:8080/api/log/view/${file}`,{
+                    headers: { Authorization: `Bearer ${token}` }
+                });
                 let lines = [];
 
                 if (Array.isArray(res.data?.body)) {

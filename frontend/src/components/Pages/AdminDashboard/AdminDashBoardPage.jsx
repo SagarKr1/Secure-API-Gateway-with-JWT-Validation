@@ -24,6 +24,9 @@ export default function AdminDashboard() {
         blockedIPs: 5,
     });
 
+    const token = sessionStorage.getItem('token');
+
+
     const [alerts, setAlerts] = useState([]);
     const [logs, setLogs] = useState([]);
 
@@ -37,7 +40,9 @@ export default function AdminDashboard() {
     useEffect(() => {
         const fetchLogs = async () => {
             try {
-                const res = await axios.get("http://localhost:8080/api/log/recent");
+                const res = await axios.get("http://localhost:8080/api/log/recent",{
+                    headers: { Authorization: `Bearer ${token}` }
+                });
                 if (res.data?.body) {
                     const parsed = res.data.body.map((line) => {
                         const time = line.substring(0, 20);
@@ -54,7 +59,9 @@ export default function AdminDashboard() {
 
         const fetchAlerts = async () => {
             try {
-                const res = await axios.get("http://localhost:8080/api/log/alerts/recent");
+                const res = await axios.get("http://localhost:8080/api/log/alerts/recent",{
+                    headers: { Authorization: `Bearer ${token}` }
+                });
                 console.log("Alerts API:", res.data); // ✅ NEW: Debug
 
                 if (res.data?.body) {

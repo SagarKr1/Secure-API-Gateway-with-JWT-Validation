@@ -22,12 +22,15 @@ export default function AlertsPage() {
     const [files, setFiles] = useState([]);
     const [logs, setLogs] = useState({});
     const [expanded, setExpanded] = useState(false);
+    const token = sessionStorage.getItem('token');
 
     const navigate = useNavigate();
 
     const fetchFiles = async () => {
         try {
-            const res = await axios.get("/api/log/alerts/all");
+            const res = await axios.get("/api/log/alerts/all",{
+                headers: { Authorization: `Bearer ${token}` }
+            });
             if (Array.isArray(res.data.body)) {
                 setFiles(res.data.body);
             } else {
@@ -41,7 +44,9 @@ export default function AlertsPage() {
 
     const fetchLogs = async (filename) => {
         try {
-            const res = await axios.get(`/api/log/alerts/view/${filename}`);
+            const res = await axios.get(`/api/log/alerts/view/${filename}`,{
+                headers: { Authorization: `Bearer ${token}` }
+            });
             if (Array.isArray(res.data.body)) {
                 setLogs((prev) => ({ ...prev, [filename]: res.data.body }));
             } else {
