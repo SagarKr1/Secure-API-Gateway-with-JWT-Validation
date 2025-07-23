@@ -12,6 +12,13 @@ module.exports.editUser = async (req, res) => {
             });
         }
 
+        if ([1, 2, 3].includes(Number(id))) {
+            return res.status(404).json({
+                status: false,
+                body: "Not allowed to make changes to this user"
+            });
+        }
+
         const [result] = await db.query(
             'UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?',
             [name, email, phone, role, id]

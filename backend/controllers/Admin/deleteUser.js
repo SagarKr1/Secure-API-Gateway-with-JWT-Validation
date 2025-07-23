@@ -11,7 +11,12 @@ module.exports.deleteUser = async (req, res) => {
                 body: 'User ID is required'
             });
         }
-
+        if ([1, 2, 3].includes(Number(id))) {
+            return res.status(404).json({
+                status: false,
+                body: "Not allowed to make changes to this user"
+            });
+        }
         const [result] = await db.query('DELETE FROM users WHERE id = ?', [id]);
 
         if (result.affectedRows === 0) {

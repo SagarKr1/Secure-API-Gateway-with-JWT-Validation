@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 // Edit/update user
 module.exports.editProfile = async (req, res) => {
     try {
-        const {  name, email, phone } = req.body;
+        const { name, email, phone } = req.body;
         const id = req.user.id;
         if (!id) {
             return res.status(400).json({
@@ -13,6 +13,14 @@ module.exports.editProfile = async (req, res) => {
                 body: 'User ID is required'
             });
         }
+
+        if ([1, 2, 3].includes(Number(id))) {
+            return res.status(404).json({
+                status: false,
+                body: "Not allowed to make changes to this user"
+            });
+        }
+
 
         const [result] = await db.query(
             'UPDATE users SET name = ?, email = ?, phone = ? WHERE id = ?',
@@ -54,7 +62,7 @@ module.exports.changePassword = async (req, res) => {
         const [rows] = await db.execute('SELECT password FROM users WHERE id = ?', [userId]);
 
         if (rows.length === 0) {
-            return res.status(404).json({ status:false,body: 'User not found.' });
+            return res.status(404).json({ status: false, body: 'User not found.' });
         }
 
         const user = rows[0];
@@ -63,7 +71,7 @@ module.exports.changePassword = async (req, res) => {
         const isMatch = await bcrypt.compare(currentPassword, user.password);
 
         if (!isMatch) {
-            return res.status(400).json({ status:false,body: 'Current password is incorrect.' });
+            return res.status(400).json({ status: false, body: 'Current password is incorrect.' });
         }
 
         // 3️⃣ Hash new password
@@ -72,10 +80,10 @@ module.exports.changePassword = async (req, res) => {
         // 4️⃣ Update DB
         await db.execute('UPDATE users SET password = ? WHERE id = ?', [newHash, userId]);
 
-        return res.json({ status:true,body: 'Password changed successfully.' });
+        return res.json({ status: true, body: 'Password changed successfully.' });
 
     } catch (e) {
         console.error(e);
-        return res.status(500).json({status:false, body: 'Server error.' });
+        return res.status(500).json({ status: false, body: 'Server error.' });
     }
 };
