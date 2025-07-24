@@ -340,6 +340,65 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
 
 ---
 
+## 📈 How It Works
+
+---
+
+### 🚦 IP Rate Limiting
+
+Your API Gateway uses **Redis** to:
+- Count requests from each unique IP.
+- Block IPs that exceed your defined limit (e.g., 100 requests per minute).
+- Return `429 Too Many Requests` if the limit is hit.
+
+**✅ How it works:**  
+- The middleware checks the Redis store for the IP count.
+- If under limit, request is allowed.
+- If over limit, request is blocked and an **alert log** is created.
+
+---
+
+### 📜 Request & Response Logging
+
+Every request & response is logged for **traceability** and **security auditing**.
+
+**✅ Where logs are stored:**
+
+\```plaintext
+backend/logs/
+├── request-YYYY-MM-DD.log
+├── response-YYYY-MM-DD.log
+├── alert-YYYY-MM-DD.log
+\```
+
+- **Request logs** include method, URL, IP, timestamp.
+- **Response logs** include status codes, results.
+- **Alert logs** record rate limit abuse or suspicious activity.
+
+---
+
+### ⚠️ Alert System
+
+If the Rate Limiter blocks an IP for too many requests:
+- An **alert entry** is written to `alert-*.log`.
+- The **Admin Dashboard** displays active alerts.
+- Admin can monitor IPs.
+
+✅ **This makes your Gateway resilient to abuse and helps detect suspicious patterns.**
+
+---
+
+### 📊 Dashboard Monitoring
+
+Your Dashboard shows:
+- Total requests per minute.
+- Rate limit status.
+- Alerts triggered by suspicious IPs.
+
+---
+
+
+
 ## 🚀 Usage Guide
 
 ---
