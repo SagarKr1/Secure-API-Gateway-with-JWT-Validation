@@ -79,4 +79,5 @@ secure-api-gateway/
 ├── Nginx/
 │   ├── default-site.config
 │   ├── nginx.config
+|   ├── ssl/
 
