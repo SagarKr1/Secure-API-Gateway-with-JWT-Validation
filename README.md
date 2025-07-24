@@ -331,8 +331,7 @@ You’re production-ready! 🚀
 If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS Elasticache, or any managed service):
 
 - Replace `localhost` with the **hostname or IP** of your external MySQL/Redis server in your `.env`:
-  ```env
+```env
   MYSQL_HOST=your-external-mysql-host
   REDIS_HOST=your-external-redis-host
 ```
----
