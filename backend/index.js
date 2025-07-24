@@ -28,7 +28,7 @@ function logAlert(message) {
     const entry = `${new Date().toISOString()} - ALERT: ${message}\n`;
 
     fs.appendFile(alertLogPath, entry, (err) => {
-        if (err) console.error('❌ Error writing to alert log:', err);
+        if (err) console.error('Error writing to alert log:', err);
     });
 
     console.warn(entry.trim());
@@ -53,7 +53,7 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '4mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// ✅ Logging middleware: logs request + response STATUS
+// Logging middleware: logs request + response BODY + STATUS
 app.use(async (req, res, next) => {
     const ip = req.ip || req.socket.remoteAddress || 'unknown';
     const timestamp = new Date().toISOString();
@@ -61,23 +61,34 @@ app.use(async (req, res, next) => {
 
     console.log(baseLog);
 
-    // Save to Redis tracker
     try {
         const trackKey = `ip-track:${ip}`;
         await redisClient.incr(trackKey);
     } catch (err) {
-        console.error('❌ Redis track error:', err);
+        console.error('Redis track error:', err);
     }
 
-    // Log once response finishes (captures STATUS)
+    const originalJson = res.json.bind(res);
+    res.json = (body) => {
+        res.locals.bodyToLog = body;
+        return originalJson(body);
+    };
+
+    const originalSend = res.send.bind(res);
+    res.send = (body) => {
+        res.locals.bodyToLog = body;
+        return originalSend(body);
+    };
+
     res.on('finish', () => {
         const status = res.statusCode;
-        const finalLog = `${baseLog} - STATUS: ${status}\n`;
+        const responseBody = res.locals.bodyToLog || {};
+        const finalLog = `${baseLog} - STATUS: ${status}\nRESPONSE: ${JSON.stringify(responseBody)}\n\n`;
 
         const date = new Date().toISOString().split('T')[0];
         const logFilePath = path.join(logDir, `api-${date}.log`);
         fs.appendFile(logFilePath, finalLog, (err) => {
-            if (err) console.error('❌ Error writing to api log:', err);
+            if (err) console.error('Error writing to api log:', err);
         });
 
         console.log(finalLog.trim());
@@ -107,7 +118,7 @@ app.use(async (req, res, next) => {
             });
         }
     } catch (err) {
-        console.error('❌ Redis rate limiter error:', err);
+        console.error('Redis rate limiter error:', err);
         logAlert(`Rate limiter Redis error for IP ${ip}: ${err.message}`);
         return res.status(500).json({ error: true, message: 'Internal server error' });
     }
@@ -128,7 +139,7 @@ app.get('/', (req, res) => {
     res.json({ status: true, message: 'API running with daily logs & alerts!' });
 });
 
-// Example test route for 401 / 500 (optional for testing)
+// Example test route for 401 / 500
 app.get('/test/unauthorized', (req, res) => {
     res.status(401).json({ message: 'Unauthorized test' });
 });
@@ -150,7 +161,7 @@ app.get('/api/stats/ips', async (req, res) => {
 
         res.json({ status: true, data, message: 'IP tracking data' });
     } catch (err) {
-        console.error('❌ Redis stats error:', err);
+        console.error('Redis stats error:', err);
         logAlert(`Redis stats error: ${err.message}`);
         res.status(500).json({ error: true, message: 'Could not fetch IP stats' });
     }
@@ -168,12 +179,12 @@ app.use((req, res) => {
 
 // Generic error handler
 app.use((err, req, res, next) => {
-    console.error('❌ Server error:', err.stack);
+    console.error('Server error:', err.stack);
     logAlert(`Server error on ${req.method} ${req.url} - ${err.message}`);
     res.status(500).json({ error: true, message: 'Something went wrong!' });
 });
 
 // Start server
 app.listen(port, () => {
-    console.log(`🚀 Server running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
