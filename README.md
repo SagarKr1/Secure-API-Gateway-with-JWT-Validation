@@ -51,4 +51,32 @@ Build a secure API gateway to:
 
 ```plaintext
 secure-api-gateway/
+├── backend/
+│   ├── auth/
+│   ├── config/
+│   ├── controllers/
+│   ├── logs/
+│   ├── node_modules/
+│   ├── routes/
+│   ├── scripts/
+│   ├── .env
+│   ├── index.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── redis.js
+│
+├── frontend/
+│   ├── build/
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   ├── .gitignore
+│   ├── 3000
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│
+├── Nginx/
+│   ├── default-site.config
+│   ├── nginx.config
 
