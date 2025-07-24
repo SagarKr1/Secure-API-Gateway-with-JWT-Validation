@@ -50,16 +50,4 @@ Build a secure API gateway to:
 
 ```plaintext
 secure-api-gateway/
-├── backend/
-│   ├── server.js
-│   ├── routes/
-│   ├── middleware/
-│   ├── config/
-│   ├── logs/
-├── nginx/
-│   ├── nginx.conf
-│   ├── ssl/
-│   ├── systemd/
-├── dashboard/
-│   ├── React UI (optional)
-└── README.md
+
