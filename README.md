@@ -83,6 +83,8 @@ secure-api-gateway/
 
 ```
 
+---
+
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
@@ -333,5 +335,4 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
   MYSQL_HOST=your-external-mysql-host
   REDIS_HOST=your-external-redis-host
 ```
-
-
+---
