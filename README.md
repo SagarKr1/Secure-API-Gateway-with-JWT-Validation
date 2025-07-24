@@ -42,7 +42,7 @@ Build a secure API gateway to:
 
 ## 🧩 Architecture Diagram
 
-> ![Architecture Diagram](./images/architecture-diagram.png)  
+> ![Architecture Diagram](./images/Design.png)  
 > *(Replace with your actual diagram image)*
 
 ---
