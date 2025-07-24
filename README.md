@@ -4,7 +4,6 @@
 
 The **Secure API Gateway** project is designed to enforce robust **authentication**, **authorization**, **rate limiting**, and **secure traffic forwarding** for your microservices architecture. It provides a single entry point to your backend APIs with multiple security layers.
 
----
 
 ## 🎯 Objective
 
@@ -16,7 +15,6 @@ Build a secure API gateway to:
 - ✅ Detect abuse and send alerts.
 - ✅ Provide a **dashboard** for monitoring API usage and system health.
 
----
 
 ## 🛠️ Tech Stack
 
@@ -27,7 +25,6 @@ Build a secure API gateway to:
 - **Web Server:** Linux, SystemD, Nginx (for TLS offloading)
 - **Monitoring:** Dashboard with logs & alert system
 
----
 
 ## 📌 Features
 
@@ -38,14 +35,11 @@ Build a secure API gateway to:
 - **📊 Dashboard:** Real-time metrics, logs, and usage stats.
 - **⚠️ Alerts:** Abuse detection with automatic alerts.
 
----
 
 ## 🧩 Architecture Diagram
 
 > ![Architecture Diagram](./Images/Design.png)  
-> *(Replace with your actual diagram image)*
 
----
 
 ## 🚀 Project Structure
 
@@ -87,6 +81,8 @@ secure-api-gateway/
 
 ## ⚙️ Installation & Setup
 
+---
+
 ### 1️⃣ Clone the Repository
 
 ```bash
@@ -94,7 +90,6 @@ git clone https://github.com/<your-username>/secure-api-gateway.git
 cd secure-api-gateway
 ```
 
----
 
 ### 2️⃣ Install Backend Dependencies
 
@@ -103,7 +98,6 @@ cd backend
 npm install
 ```
 
----
 
 ### 3️⃣ Install Frontend Dependencies
 
@@ -112,7 +106,6 @@ cd ../frontend
 npm install
 ```
 
----
 
 ### 4️⃣ Install Redis
 
@@ -128,7 +121,6 @@ sudo systemctl enable redis-server
 sudo systemctl start redis-server
 ```
 
----
 
 ### 5️⃣ Install MySQL
 
@@ -152,7 +144,6 @@ GRANT ALL PRIVILEGES ON secure_gateway.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
----
 
 ### 6️⃣ Install PM2 (Optional but Recommended)
 
@@ -172,7 +163,6 @@ pm2 save
 pm2 startup
 ```
 
----
 
 ### 7️⃣ Install & Setup Nginx
 
@@ -186,7 +176,6 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 ```
 
----
 
 ### 8️⃣ Configure Environment Variables
 
@@ -203,7 +192,6 @@ MYSQL_PASSWORD=yourpassword
 MYSQL_DATABASE=secure_gateway
 ```
 
----
 
 ### 9️⃣ Generate Self-Signed TLS Certificate
 
@@ -216,7 +204,6 @@ openssl req -x509 -nodes -days 365 \
   -out Nginx/ssl/server.crt
 ```
 
----
 
 ### 🔟 Setup & Configure Nginx
 
@@ -225,7 +212,6 @@ Your **Secure API Gateway** uses **Nginx** for:
 - Proxying API requests to Node.js backend
 - Serving React frontend (optional)
 
----
 
 #### 📁 Nginx Config Files
 
@@ -233,7 +219,6 @@ Your **Secure API Gateway** uses **Nginx** for:
 - Site config: `/etc/nginx/sites-available/default`  
   (or `/etc/nginx/conf.d/secure-gateway.conf`)
 
----
 
 #### 📝 Example `nginx.conf`
 
@@ -288,7 +273,6 @@ http {
 }
 ```
 
----
 
 #### ✅ Test & Reload Nginx
 
@@ -314,7 +298,6 @@ sudo systemctl reload nginx
 sudo systemctl restart nginx
 ```
 
----
 
 ✅ **Done!** Now your Secure API Gateway runs behind HTTPS with:
 - Node.js + PM2
@@ -338,8 +321,6 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
 
 ---
 
----
-
 ## 📈 How It Works
 
 ---
@@ -356,7 +337,6 @@ Your API Gateway uses **Redis** to:
 - If under limit, request is allowed.
 - If over limit, request is blocked and an **alert log** is created.
 
----
 
 ### 📜 Request & Response Logging
 
@@ -364,18 +344,17 @@ Every request & response is logged for **traceability** and **security auditing*
 
 **✅ Where logs are stored:**
 
-\```plaintext
+```plaintext
 backend/logs/
 ├── request-YYYY-MM-DD.log
 ├── response-YYYY-MM-DD.log
 ├── alert-YYYY-MM-DD.log
-\```
+```
 
 - **Request logs** include method, URL, IP, timestamp.
 - **Response logs** include status codes, results.
 - **Alert logs** record rate limit abuse or suspicious activity.
 
----
 
 ### ⚠️ Alert System
 
@@ -386,7 +365,7 @@ If the Rate Limiter blocks an IP for too many requests:
 
 ✅ **This makes your Gateway resilient to abuse and helps detect suspicious patterns.**
 
----
+
 
 ### 📊 Dashboard Monitoring
 
@@ -396,8 +375,6 @@ Your Dashboard shows:
 - Alerts triggered by suspicious IPs.
 
 ---
-
-
 
 ## 🚀 Usage Guide
 
@@ -413,21 +390,31 @@ Your Secure API Gateway supports **3 types of users**:
 - Can approve/unapprove blogs
 - Can edit or delete any user
 
+- > ![Architecture Diagram](./Images/adminDashboard.png)
+- >  ![Architecture Diagram](./Images/manageUser.png)
+  > ![Architecture Diagram](./Images/manageBlog.png)  
+
 2️⃣ **Subadmin**
 - Same as Admin but **cannot approve/unapprove blogs**
 - Can manage user edits/deletes
 - Can see logs & alerts
+
+- - > ![Architecture Diagram](./Images/adminDashboard.png)
+- >  ![Architecture Diagram](./Images/manageUser.png)
+  > ![Architecture Diagram](./Images/subBlog.png)
 
 3️⃣ **User**
 - Can create new blogs
 - Can edit their own profile
 - Cannot access logs or other users
 
+  > ![Architecture Diagram](./Images/userDashboard.png)
+  
+
 ✅ The **JWT** contains a `role` claim:
 - The **API Gateway** checks the role for protected routes.
 - The **Frontend** uses the role to show/hide pages (Admin panel, blog approval, etc).
 
----
 
 ### 🗂️ Default Test Users
 
@@ -441,7 +428,6 @@ Your project includes **3 default users** for quick testing:
 
 Use these accounts to **log in** and get valid JWTs for each role.
 
----
 
 ### Example JWT Payload
 
@@ -454,8 +440,6 @@ Use these accounts to **log in** and get valid JWTs for each role.
 }
 ```
 
----
-
 ### How Roles Control Routes
 
 - **Admin & Subadmin** can access:
@@ -467,9 +451,7 @@ Use these accounts to **log in** and get valid JWTs for each role.
 
 ✅ Any other access returns **403 Forbidden** if the role check fails.
 
----
 
----
 
 ### 🔑 How Roles Work in Backend
 
@@ -533,7 +515,7 @@ module.exports = authMiddleware;
 
 ✅ Use `checkRole('admin')`, `checkRole('subadmin')`, etc., for each **API route**.
 
----
+
 
 ### How Frontend Uses Role
 
@@ -558,3 +540,26 @@ if (token) {
 ```
 
 ---
+
+## 📬 License & Contact
+
+---
+
+### 📄 License
+
+This project is licensed under the **MIT License** — feel free to fork, adapt, and build on it.
+
+---
+
+### 📧 Contact
+
+If you find bugs, have suggestions, or want to contribute:
+- Open an **Issue** on this repository.
+- Or email me at **sag197348@gmail.com**.
+
+---
+
+✅ Built with ❤️ by Sagar Kumar — Secure APIs, done right!
+
+---
+
