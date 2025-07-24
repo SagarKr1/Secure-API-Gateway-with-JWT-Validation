@@ -81,3 +81,243 @@ secure-api-gateway/
 │   ├── nginx.config
 |   ├── ssl/
 
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+\```bash
+git clone https://github.com/<your-username>/secure-api-gateway.git
+cd secure-api-gateway
+\```
+
+---
+
+### 2️⃣ Install Backend Dependencies
+
+\```bash
+cd backend
+npm install
+\```
+
+---
+
+### 3️⃣ Install Frontend Dependencies
+
+\```bash
+cd ../frontend
+npm install
+\```
+
+---
+
+### 4️⃣ Install Redis
+
+\```bash
+# Ubuntu example
+sudo apt update
+sudo apt install redis-server
+
+# Enable & start Redis
+sudo systemctl enable redis-server
+sudo systemctl start redis-server
+\```
+
+---
+
+### 5️⃣ Install MySQL
+
+\```bash
+# Ubuntu example
+sudo apt update
+sudo apt install mysql-server
+
+# Enable & start MySQL
+sudo systemctl enable mysql
+sudo systemctl start mysql
+\```
+
+Create your database and user in MySQL:
+
+\```sql
+CREATE DATABASE secure_gateway;
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'yourpassword';
+GRANT ALL PRIVILEGES ON secure_gateway.* TO 'root'@'localhost';
+FLUSH PRIVILEGES;
+\```
+
+---
+
+### 6️⃣ Install PM2 (Optional but Recommended)
+
+> PM2 is a process manager for Node.js — it keeps your app alive & restarts it on crashes.
+
+\```bash
+sudo npm install -g pm2
+
+# Start your backend with PM2
+cd backend
+pm2 start index.js --name secure-api-gateway
+
+# Optional: save & startup script
+pm2 save
+pm2 startup
+\```
+
+---
+
+### 7️⃣ Install & Setup Nginx
+
+\```bash
+sudo apt update
+sudo apt install nginx
+
+# Enable & start Nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+\```
+
+---
+
+### 8️⃣ Configure Environment Variables
+
+Create a `.env` file in your `/backend` folder and add:
+
+\```env
+PORT=3000
+JWT_SECRET=your-secret-key
+REDIS_HOST=localhost
+REDIS_PORT=6379
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=yourpassword
+MYSQL_DATABASE=secure_gateway
+\```
+
+---
+
+### 9️⃣ Generate Self-Signed TLS Certificate
+
+Inside your `Nginx/ssl/` folder, run:
+
+\```bash
+openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 \
+  -keyout Nginx/ssl/server.key \
+  -out Nginx/ssl/server.crt
+\```
+
+---
+
+### 🔟 Setup & Configure Nginx
+
+Your **Secure API Gateway** uses **Nginx** for:
+- TLS/SSL offloading (HTTPS)
+- Proxying API requests to Node.js backend
+- Serving React frontend (optional)
+
+---
+
+#### 📁 Nginx Config Files
+
+- Main config: `/etc/nginx/nginx.conf`  
+- Site config: `/etc/nginx/sites-available/default`  
+  (or `/etc/nginx/conf.d/secure-gateway.conf`)
+
+---
+
+#### 📝 Example `nginx.conf`
+
+\```nginx
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+  include       /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+
+  sendfile        on;
+  keepalive_timeout 65;
+
+  server {
+    listen 80;
+    listen [::]:80;
+    server_name your-domain.com;
+
+    # Redirect HTTP to HTTPS
+    return 301 https://$host$request_uri;
+  }
+
+  server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name your-domain.com;
+
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    location /api/ {
+      proxy_pass http://127.0.0.1:3000/;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location / {
+      root /var/www/html; # or your frontend build folder
+      try_files $uri /index.html;
+    }
+  }
+}
+\```
+
+---
+
+#### ✅ Test & Reload Nginx
+
+Test your config:
+
+\```bash
+sudo nginx -t
+\```
+
+Reload or restart:
+
+\```bash
+sudo systemctl reload nginx
+# or
+sudo systemctl restart nginx
+\```
+
+---
+
+✅ **Done!** Now your Secure API Gateway runs behind HTTPS with:
+- Node.js + PM2
+- Redis
+- MySQL
+- Nginx (TLS + proxy)
+
+You’re production-ready! 🚀
+
+---
+
+### ⚠️ Note for External Database & Redis
+
+If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS Elasticache, or any managed service):
+
+- Replace `localhost` with the **hostname or IP** of your external MySQL/Redis server in your `.env`:
+  ```env
+  MYSQL_HOST=your-external-mysql-host
+  REDIS_HOST=your-external-redis-host
+
+
+
