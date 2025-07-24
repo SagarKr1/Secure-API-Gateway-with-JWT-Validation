@@ -321,7 +321,7 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
 
 ---
 
-## 📈 How It Works
+## 📈 How It Works (Rate Limmiter and Logs)
 
 ---
 
