@@ -235,7 +235,7 @@ Your **Secure API Gateway** uses **Nginx** for:
 
 #### 📝 Example `nginx.conf`
 
-\```nginx
+```nginx
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
