@@ -21,6 +21,7 @@ Build a secure API gateway to:
 ## 🛠️ Tech Stack
 
 - **Backend:** Node.js (Express)
+- **Frontend:** React.js (MUI)
 - **Security:** JWT, OAuth2 (extension, optional)
 - **Rate Limiting:** Redis
 - **Web Server:** Linux, SystemD, Nginx (for TLS offloading)
@@ -50,16 +51,4 @@ Build a secure API gateway to:
 
 ```plaintext
 secure-api-gateway/
-├── backend/
-│   ├── server.js
-│   ├── routes/
-│   ├── middleware/
-│   ├── config/
-│   ├── logs/
-├── nginx/
-│   ├── nginx.conf
-│   ├── ssl/
-│   ├── systemd/
-├── dashboard/
-│   ├── React UI (optional)
-└── README.md
+
