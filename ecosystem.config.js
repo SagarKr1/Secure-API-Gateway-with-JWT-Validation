@@ -4,17 +4,17 @@ module.exports = {
             name: "api-gateway",
             script: "backend/index.js",
             env: {
-                PORT: 8080,
-                MYSQL_USER: "root",
-                MYSQL_PASSWORD: "Sagar@1234",
-                MYSQL_HOST: "localhost",
+                PORT: <PORT>,
+                MYSQL_USER: <Myql-User>,
+                MYSQL_PASSWORD: <Mysql-Password>,
+                MYSQL_HOST: <Host-Name>,
                 DATABASE: "Blog",
-                SECRET_KEY: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-                JWT_SECRET: "789abcdef0123456789abcde",
-                FRONTEND_BASE_URL: "https://localhost",
-                email: "noreply.p5digital@gmail.com",
-                pass: "olst bumm nryh fmef",
-                REDIS_URL: "redis://127.0.0.1:6379"
+                SECRET_KEY: <Secret-Key>,
+                JWT_SECRET: <JWT-Secret>,
+                FRONTEND_BASE_URL: <frontend-Url>,
+                email: <Email>,
+                pass:<Pass-Key>,
+                REDIS_URL: <Redis-Url>
             }
         }
     ]
