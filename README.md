@@ -390,25 +390,27 @@ Your Secure API Gateway supports **3 types of users**:
 - Can approve/unapprove blogs
 - Can edit or delete any user
 
-- > ![Architecture Diagram](./Images/adminDashboard.png)
+- > ![Architecture Diagram](./Images/admindashboard.png)
 - >  ![Architecture Diagram](./Images/manageUser.png)
-  > ![Architecture Diagram](./Images/manageBlog.png)  
+- > ![Architecture Diagram](./Images/adminBlog.png)
+- > ![Architecture Diagram](./Images/adminBlogApprove.png)
+
 
 2️⃣ **Subadmin**
 - Same as Admin but **cannot approve/unapprove blogs**
 - Can manage user edits/deletes
 - Can see logs & alerts
 
-- - > ![Architecture Diagram](./Images/adminDashboard.png)
+- > ![Architecture Diagram](./Images/admindashboard.png)
 - >  ![Architecture Diagram](./Images/manageUser.png)
-  > ![Architecture Diagram](./Images/subBlog.png)
+- > ![Architecture Diagram](./Images/subBlog.png)
 
 3️⃣ **User**
 - Can create new blogs
 - Can edit their own profile
 - Cannot access logs or other users
 
-  > ![Architecture Diagram](./Images/userDashboard.png)
+  > ![Architecture Diagram](./Images/user.png)
   
 
 ✅ The **JWT** contains a `role` claim:
@@ -538,6 +540,53 @@ if (token) {
   }
 }
 ```
+
+### All Related Images 
+
+Home Page
+- > ![Architecture Diagram](./Images/Home.png)
+
+Blog Page
+
+- > ![Architecture Diagram](./Images/Blog.png)
+
+Login Page
+
+- > ![Architecture Diagram](./Images/Login.png)
+
+Forgot Password
+
+- > ![Architecture Diagram](./Images/forgotPassword.png)
+
+Admin Dashboard
+
+- > ![Architecture Diagram](./Images/admindashboard.png)
+
+Manage User
+
+- > ![Architecture Diagram](./Images/manageUser.png)
+
+Admin Manage Blog
+
+- > ![Architecture Diagram](./Images/adminBlog.png)
+
+Admin Approve Blog
+
+- > ![Architecture Diagram](./Images/adminBlogApprove.png)
+
+Sub Admin Blog 
+
+- > ![Architecture Diagram](./Images/subBlog.png)
+
+User Dashboard
+
+- > ![Architecture Diagram](./Images/user.png)
+
+Edit Profile
+
+- > ![Architecture Diagram](./Images/profile.png)
+
+
 
 ---
 

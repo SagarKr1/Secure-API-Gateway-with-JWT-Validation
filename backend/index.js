@@ -53,7 +53,7 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '4mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Logging middleware: logs request + response BODY + STATUS
+// ✅ Logging middleware: request + status only — no response body
 app.use(async (req, res, next) => {
     const ip = req.ip || req.socket.remoteAddress || 'unknown';
     const timestamp = new Date().toISOString();
@@ -68,22 +68,9 @@ app.use(async (req, res, next) => {
         console.error('Redis track error:', err);
     }
 
-    const originalJson = res.json.bind(res);
-    res.json = (body) => {
-        res.locals.bodyToLog = body;
-        return originalJson(body);
-    };
-
-    const originalSend = res.send.bind(res);
-    res.send = (body) => {
-        res.locals.bodyToLog = body;
-        return originalSend(body);
-    };
-
     res.on('finish', () => {
         const status = res.statusCode;
-        const responseBody = res.locals.bodyToLog || {};
-        const finalLog = `${baseLog} - STATUS: ${status}\nRESPONSE: ${JSON.stringify(responseBody)}\n\n`;
+        const finalLog = `${baseLog} - STATUS: ${status}\n`;
 
         const date = new Date().toISOString().split('T')[0];
         const logFilePath = path.join(logDir, `api-${date}.log`);
