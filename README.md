@@ -552,7 +552,7 @@ Blog Page
 
 Login Page
 
-- > ![Architecture Diagram](./Images/Login.png)
+- > ![Architecture Diagram](./Images/login.png)
 
 Forgot Password
 
