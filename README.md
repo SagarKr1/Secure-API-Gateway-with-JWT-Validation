@@ -335,3 +335,101 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
   MYSQL_HOST=your-external-mysql-host
   REDIS_HOST=your-external-redis-host
 ```
+
+---
+
+---
+
+## 🚀 Usage Guide
+
+---
+
+### 👥 User Roles & Permissions
+
+Your Secure API Gateway supports **3 types of users**:
+
+1️⃣ **Admin**
+- Can see request logs & alert logs
+- Full access to the Admin Dashboard
+- Can approve/unapprove blogs
+- Can edit or delete any user
+
+2️⃣ **Subadmin**
+- Same as Admin but **cannot approve/unapprove blogs**
+- Can manage user edits/deletes
+- Can see logs & alerts
+
+3️⃣ **User**
+- Can create new blogs
+- Can edit their own profile
+- Cannot access logs or other users
+
+✅ The **JWT** contains a `role` claim:
+- The **API Gateway** checks the role for protected routes.
+- The **Frontend** uses the role to show/hide pages (Admin panel, blog approval, etc).
+
+---
+
+### 🗂️ Default Test Users
+
+Your project includes **3 default users** for quick testing:
+
+| Role      | Email                 | Password         |
+|-----------|-----------------------|------------------|
+| Admin     | admin@example.com     | admin@1234       |
+| Subadmin  | subadmin@example.com  | subadmin@1234    |
+| User      | user@example.com      | user@1234        |
+
+Use these accounts to **log in** and get valid JWTs for each role.
+
+---
+
+### Example JWT Payload
+
+```json
+{
+  "id": "123",
+  "email": "admin@gmail.com",
+  "role": "admin",
+  "exp": 1698754400
+}
+```
+
+---
+
+### How Roles Control Routes
+
+- **Admin & Subadmin** can access:
+  - `.../admin/*` routes
+  - Dashboard for logs & alerts
+- **Users** can only access:
+  - `.../blogs` (create blogs)
+  - `.../profile` (edit profile)
+
+✅ Any other access returns **403 Forbidden** if the role check fails.
+
+---
+
+### How Frontend Uses Role
+
+In your React app:
+
+```js
+import {jwt_decode} from "jwt-decode";
+
+const token = localStorage.getItem("token");
+if (token) {
+  const decoded = jwt_decode(token);
+  const role = decoded.role;
+
+  if (role === "admin") {
+    // Show Admin Panel
+  } else if (role === "subadmin") {
+    // Show Subadmin tools
+  } else {
+    // Regular User pages
+  }
+}
+```
+
+---
