@@ -87,65 +87,68 @@ secure-api-gateway/
 
 ### 1️⃣ Clone the Repository
 
-\```bash
+```bash
 git clone https://github.com/<your-username>/secure-api-gateway.git
 cd secure-api-gateway
-\```
+```
 
 ---
 
 ### 2️⃣ Install Backend Dependencies
 
-\```bash
+```bash
 cd backend
 npm install
-\```
+```
 
 ---
 
 ### 3️⃣ Install Frontend Dependencies
 
-\```bash
+```bash
 cd ../frontend
 npm install
-\```
+```
 
 ---
 
 ### 4️⃣ Install Redis
 
-\```bash
 # Ubuntu example
+```bash
 sudo apt update
 sudo apt install redis-server
+```
 
 # Enable & start Redis
+```bash
 sudo systemctl enable redis-server
 sudo systemctl start redis-server
-\```
+```
 
 ---
 
 ### 5️⃣ Install MySQL
 
-\```bash
 # Ubuntu example
+```bash
 sudo apt update
 sudo apt install mysql-server
-
+```
 # Enable & start MySQL
+```bash
 sudo systemctl enable mysql
 sudo systemctl start mysql
-\```
+```
 
 Create your database and user in MySQL:
 
-\```sql
+```sql
 CREATE DATABASE secure_gateway;
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'yourpassword';
 GRANT ALL PRIVILEGES ON secure_gateway.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
-\```
+```
 
 ---
 
@@ -153,30 +156,33 @@ FLUSH PRIVILEGES;
 
 > PM2 is a process manager for Node.js — it keeps your app alive & restarts it on crashes.
 
-\```bash
+```bash
 sudo npm install -g pm2
-
+```
 # Start your backend with PM2
+```bash
 cd backend
 pm2 start index.js --name secure-api-gateway
-
+```
 # Optional: save & startup script
+```bash
 pm2 save
 pm2 startup
-\```
+```
 
 ---
 
 ### 7️⃣ Install & Setup Nginx
 
-\```bash
+```bash
 sudo apt update
 sudo apt install nginx
-
+```
 # Enable & start Nginx
+```bash
 sudo systemctl enable nginx
 sudo systemctl start nginx
-\```
+```
 
 ---
 
@@ -184,7 +190,7 @@ sudo systemctl start nginx
 
 Create a `.env` file in your `/backend` folder and add:
 
-\```env
+```env
 PORT=3000
 JWT_SECRET=your-secret-key
 REDIS_HOST=localhost
@@ -193,20 +199,20 @@ MYSQL_HOST=localhost
 MYSQL_USER=root
 MYSQL_PASSWORD=yourpassword
 MYSQL_DATABASE=secure_gateway
-\```
+```
 
 ---
 
 ### 9️⃣ Generate Self-Signed TLS Certificate
 
-Inside your `Nginx/ssl/` folder, run:
+Inside your `/etc/nginx/ssl/` folder, run:
 
-\```bash
+```bash
 openssl req -x509 -nodes -days 365 \
   -newkey rsa:2048 \
   -keyout Nginx/ssl/server.key \
   -out Nginx/ssl/server.crt
-\```
+```
 
 ---
 
@@ -265,7 +271,7 @@ http {
     ssl_protocols TLSv1.2 TLSv1.3;
 
     location /api/ {
-      proxy_pass http://127.0.0.1:3000/;
+      proxy_pass http://127.0.0.1:8080/;
       proxy_set_header Host $host;
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -286,17 +292,25 @@ http {
 
 Test your config:
 
-\```bash
+Start Nginx
+```bash
+sudo systemctl start nginx
+```
+
+Check Status
+```bash
 sudo nginx -t
-\```
+```
 
 Reload or restart:
 
-\```bash
+```bash
 sudo systemctl reload nginx
+```
 # or
+```bash
 sudo systemctl restart nginx
-\```
+```
 
 ---
 
@@ -318,6 +332,6 @@ If you use **external servers** for **MySQL** or **Redis** (like AWS RDS, AWS El
   ```env
   MYSQL_HOST=your-external-mysql-host
   REDIS_HOST=your-external-redis-host
-
+```
 
 
