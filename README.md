@@ -86,8 +86,8 @@ secure-api-gateway/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/secure-api-gateway.git
-cd secure-api-gateway
+git clone https://github.com/SagarKr1/Secure-API-Gateway-with-JWT-Validation.git
+cd Secure-API-Gateway-with-JWT-Validation
 ```
 
 
