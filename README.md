@@ -390,10 +390,10 @@ Your Secure API Gateway supports **3 types of users**:
 - Can approve/unapprove blogs
 - Can edit or delete any user
 
-- > ![Architecture Diagram](./Images/admindashboard.png)
-- >  ![Architecture Diagram](./Images/manageUser.png)
-- > ![Architecture Diagram](./Images/adminBlog.png)
-- > ![Architecture Diagram](./Images/adminBlogApprove.png)
+- > ![Admin Dashboard](./Images/admindashboard.png)
+- >  ![Manage User](./Images/manageUser.png)
+- > ![Manage Blog](./Images/adminBlog.png)
+- > ![Approve Blog](./Images/adminBlogApprove.png)
 
 
 2️⃣ **Subadmin**
@@ -401,16 +401,16 @@ Your Secure API Gateway supports **3 types of users**:
 - Can manage user edits/deletes
 - Can see logs & alerts
 
-- > ![Architecture Diagram](./Images/admindashboard.png)
-- >  ![Architecture Diagram](./Images/manageUser.png)
-- > ![Architecture Diagram](./Images/subBlog.png)
+- > ![Admin Dashboard](./Images/admindashboard.png)
+- >  ![Manage Blog](./Images/manageUser.png)
+- > ![My Blog](./Images/subBlog.png)
 
 3️⃣ **User**
 - Can create new blogs
 - Can edit their own profile
 - Cannot access logs or other users
 
-  > ![Architecture Diagram](./Images/user.png)
+  > ![User Dashboard](./Images/user.png)
   
 
 ✅ The **JWT** contains a `role` claim:
@@ -544,47 +544,47 @@ if (token) {
 ### All Related Images 
 
 Home Page
-- > ![Architecture Diagram](./Images/Home.png)
+- > ![Home Page](./Images/Home.png)
 
 Blog Page
 
-- > ![Architecture Diagram](./Images/Blog.png)
+- > ![Blog Page](./Images/Blog.png)
 
 Login Page
 
-- > ![Architecture Diagram](./Images/login.png)
+- > ![Login](./Images/login.png)
 
 Forgot Password
 
-- > ![Architecture Diagram](./Images/forgotPassword.png)
+- > ![Forgot Password](./Images/forgotPassword.png)
 
 Admin Dashboard
 
-- > ![Architecture Diagram](./Images/admindashboard.png)
+- > ![Admin Dashboard](./Images/admindashboard.png)
 
 Manage User
 
-- > ![Architecture Diagram](./Images/manageUser.png)
+- > ![Manage User](./Images/manageUser.png)
 
 Admin Manage Blog
 
-- > ![Architecture Diagram](./Images/adminBlog.png)
+- > ![Manage Blog](./Images/adminBlog.png)
 
 Admin Approve Blog
 
-- > ![Architecture Diagram](./Images/adminBlogApprove.png)
+- > ![Blog Approve](./Images/adminBlogApprove.png)
 
 Sub Admin Blog 
 
-- > ![Architecture Diagram](./Images/subBlog.png)
+- > ![Sub Admin Dashboard](./Images/subBlog.png)
 
 User Dashboard
 
-- > ![Architecture Diagram](./Images/user.png)
+- > ![User Dashboard](./Images/user.png)
 
 Edit Profile
 
-- > ![Architecture Diagram](./Images/profile.png)
+- > ![Profile](./Images/profile.png)
 
 
 
